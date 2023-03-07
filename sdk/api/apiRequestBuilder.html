@@ -1010,7 +1010,7 @@
 </table>
 <p>Note that <code>markMatchingVariants</code> is set by default to <code>false</code> which turns off this feature on the API.</p>
 <h4 id="staged">Staged</h4>
-<p>It is possible to add the <code>staged</code> boolean option to the uri. This decides wether to query the <code>current</code> or <code>staged</code> projections, for example in <a href="https://docs.commercetools.com/http-api-projects-productProjections.html#product-projections" target="_blank">Product Projections</a>. (Defaults to <strong>false</strong>)</p>
+<p>It is possible to add the <code>staged</code> boolean option to the uri. This decides whether to query the <code>current</code> or <code>staged</code> projections, for example in <a href="https://docs.commercetools.com/api/projects/productProjections" target="_blank">Product Projections</a>. (Defaults to <strong>false</strong>)</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> service <span class="token operator">=</span> <span class="token function">createRequestBuilder</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
 <span class="token keyword">const</span> uri <span class="token operator">=</span> service<span class="token punctuation">.</span>productProjections<span class="token punctuation">.</span><span class="token function">staged</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
@@ -1030,7 +1030,7 @@
 <span class="token keyword">const</span> uri <span class="token operator">=</span> requestBuilder<span class="token punctuation">.</span>carts<span class="token punctuation">.</span><span class="token function">byCustomerId</span><span class="token punctuation">(</span><span class="token string">&apos;customerId&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h4 id="dataerasure">dataErasure</h4>
-<p>You can also append the <code>dataErasure</code> option to the uri when making a delete request if you want to make sure all related data is deleted. For example, regarding the GDPR, this means that all personal data related to the particular object, including invisible data, is erased. <a href="https://docs.commercetools.com/release-notes#releases-2018-05-24-data-erasure" target="_blank">More info here</a></p>
+<p>You can also append the <code>dataErasure</code> option to the uri when making a delete request if you want to make sure all related data is deleted. For example, regarding the GDPR, this means that all personal data related to the particular object, including invisible data, is erased. <a href="https://docs.commercetools.com/api/releases/2018-05-24-data-erasure" target="_blank">More info here</a></p>
 <p>This can be done by using the <code>.withFullDataErasure()</code> method.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> service <span class="token operator">=</span> <span class="token function">createRequestBuilder</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
 <span class="token keyword">const</span> deleteUri <span class="token operator">=</span> service<span class="token punctuation">.</span>payments
@@ -1040,7 +1040,7 @@
   <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h4 id="withtotal">withTotal</h4>
-<p>You can also append the <code>withTotal</code> option to the uri when making a query. <a href="https://docs.commercetools.com/http-api#pagedqueryresult" target="_blank">More info here</a>.</p>
+<p>You can also append the <code>withTotal</code> option to the uri when making a query. <a href="https://docs.commercetools.com/api/general-concepts#pagedqueryresult" target="_blank">More info here</a>.</p>
 <p>This can be done by using the <code>.withTotal(false)</code> method.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> service <span class="token operator">=</span> <span class="token function">createRequestBuilder</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
 <span class="token keyword">const</span> getUri <span class="token operator">=</span> service<span class="token punctuation">.</span>orders<span class="token punctuation">.</span><span class="token function">withTotal</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -1186,7 +1186,7 @@ requestBuilder<span class="token punctuation">.</span>channels<span class="token
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"api-request-builder","level":"1.2.5.3.1","depth":4,"next":{"title":"get-credentials","level":"1.2.5.3.2","depth":4,"path":"sdk/api/getCredentials.md","ref":"sdk/api/getCredentials.md","articles":[]},"previous":{"title":"helpers","level":"1.2.5.3","depth":3,"anchor":"#helpers","path":"sdk/api/README.md","ref":"sdk/api/README.md#helpers","articles":[{"title":"api-request-builder","level":"1.2.5.3.1","depth":4,"path":"sdk/api/apiRequestBuilder.md","ref":"sdk/api/apiRequestBuilder.md","articles":[]},{"title":"get-credentials","level":"1.2.5.3.2","depth":4,"path":"sdk/api/getCredentials.md","ref":"sdk/api/getCredentials.md","articles":[]},{"title":"http-user-agent","level":"1.2.5.3.3","depth":4,"path":"sdk/api/httpUserAgent.md","ref":"sdk/api/httpUserAgent.md","articles":[]},{"title":"sync-actions","level":"1.2.5.3.4","depth":4,"path":"sdk/api/syncActions.md","ref":"sdk/api/syncActions.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs"],"root":"docs","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/commercetools/nodejs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":{"anonymizeIp":true},"token":"UA-38285631-20"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/commercetools/nodejs/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"commercetools node.js","gitbook":">=3.2.1"},"file":{"path":"sdk/api/apiRequestBuilder.md","mtime":"2021-05-25T12:52:00.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-02T21:26:00.666Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"api-request-builder","level":"1.2.5.3.1","depth":4,"next":{"title":"get-credentials","level":"1.2.5.3.2","depth":4,"path":"sdk/api/getCredentials.md","ref":"sdk/api/getCredentials.md","articles":[]},"previous":{"title":"helpers","level":"1.2.5.3","depth":3,"anchor":"#helpers","path":"sdk/api/README.md","ref":"sdk/api/README.md#helpers","articles":[{"title":"api-request-builder","level":"1.2.5.3.1","depth":4,"path":"sdk/api/apiRequestBuilder.md","ref":"sdk/api/apiRequestBuilder.md","articles":[]},{"title":"get-credentials","level":"1.2.5.3.2","depth":4,"path":"sdk/api/getCredentials.md","ref":"sdk/api/getCredentials.md","articles":[]},{"title":"http-user-agent","level":"1.2.5.3.3","depth":4,"path":"sdk/api/httpUserAgent.md","ref":"sdk/api/httpUserAgent.md","articles":[]},{"title":"sync-actions","level":"1.2.5.3.4","depth":4,"path":"sdk/api/syncActions.md","ref":"sdk/api/syncActions.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs","ga"],"root":"docs","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/commercetools/nodejs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":{"anonymizeIp":true},"token":"UA-38285631-20"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/commercetools/nodejs/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"commercetools node.js","gitbook":">=3.2.1"},"file":{"path":"sdk/api/apiRequestBuilder.md","mtime":"2021-04-09T12:07:51.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T09:23:43.884Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1200,11 +1200,19 @@ requestBuilder<span class="token punctuation">.</span>channels<span class="token
         
     
         
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

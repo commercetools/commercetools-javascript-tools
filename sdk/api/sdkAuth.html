@@ -749,7 +749,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="sdk-auth"><code>sdk-auth</code></h1>
-<p>Auth module for different <a href="https://docs.commercetools.com/http-api-authorization.html#authorization-flows" target="_blank">authorization flows</a> of commercetools platform API</p>
+<p>Auth module for different <a href="https://docs.commercetools.com/api/authorization#authorization-overview" target="_blank">authorization flows</a> of commercetools platform API</p>
 <h2 id="install">Install</h2>
 <h4 id="nodejs">Node.js</h4>
 <pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> --save @commercetools/sdk-auth
@@ -770,7 +770,7 @@
 <li><code>token</code> <em>(String)</em>: A <code>token</code> which will be sent in <code>Authorization</code> header. If not provided, we calculate it from credentials.</li>
 <li><code>disableRefreshToken</code> <em>(boolean)</em>: whether the API should generate a refresh token</li>
 <li><code>credentials</code> <em>(Object)</em>: the client credentials for authentication (<code>clientId</code>, <code>clientSecret</code>)</li>
-<li><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/http-api-authorization.html#scopes" target="_blank">scopes</a> (default <code>manage_project:{projectKey}</code>) to assign to the OAuth token</li>
+<li><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/api/scopes" target="_blank">scopes</a> (default <code>manage_project:{projectKey}</code>) to assign to the OAuth token</li>
 <li><code>fetch</code> <em>(Function)</em>: A <code>fetch</code> implementation which can be e.g. <code>node-fetch</code> or <code>unfetch</code> but also the native browser <code>fetch</code> function. Only needs be be passed if not globally available (e.g. through <code>isomorphic-fetch</code>)</li>
 </ol>
 <h4 id="usage-example">Usage example</h4>
@@ -798,7 +798,7 @@
 </code></pre>
 <h2 id="authorization-flows">Authorization Flows</h2>
 <h3 id="client-credentials-flow">Client Credentials Flow</h3>
-<p>Fetches access token using <a href="https://docs.commercetools.com/http-api-authorization.html#client-credentials-flow" target="_blank">Client Credentials Flow</a> from the commercetools platform API.</p>
+<p>Fetches access token using <a href="https://docs.commercetools.com/api/authorization#client-credentials-flow" target="_blank">Client Credentials Flow</a> from the commercetools platform API.</p>
 <h4 id="argument">Argument</h4>
 <ol>
 <li><code>config</code> <em>(Object)</em>: Optional configuration which can override config properties given when building <code>authClient</code> object.</li>
@@ -814,7 +814,7 @@
 <span class="token comment">// }</span>
 </code></pre>
 <h3 id="customer-password-flow">Customer Password Flow</h3>
-<p>Fetches access token using <a href="https://docs.commercetools.com/http-api-authorization.html#password-flow" target="_blank">Password Flow</a> from the commercetools platform API.</p>
+<p>Fetches access token using <a href="https://docs.commercetools.com/api/authorization#password-flow" target="_blank">Password Flow</a> from the commercetools platform API.</p>
 <h4 id="argument">Argument</h4>
 <ol>
 <li><code>credentials</code> <em>(Object)</em>: Object with named arguments containing user credentials<ul>
@@ -871,7 +871,7 @@
 <span class="token comment">// }</span>
 </code></pre>
 <h3 id="refresh-token-flow">Refresh Token Flow</h3>
-<p>Fetches a new access token using <a href="https://docs.commercetools.com/http-api-authorization.html#refresh-token-flow" target="_blank">Refresh Token Flow</a> from the commercetools platform API.</p>
+<p>Fetches a new access token using <a href="https://docs.commercetools.com/api/authorization#refresh-token-flow" target="_blank">Refresh Token Flow</a> from the commercetools platform API.</p>
 <h4 id="argument">Argument</h4>
 <ol>
 <li><code>token</code> <em>(String)</em>: <code>refresh_token</code> obtained from previous authorization process</li>
@@ -888,7 +888,7 @@
 <span class="token comment">// }</span>
 </code></pre>
 <h3 id="anonymous-session-flow">Anonymous Session Flow</h3>
-<p>Fetches access token using <a href="https://docs.commercetools.com/http-api-authorization.html#tokens-for-anonymous-sessions" target="_blank">Anonymous Session Flow</a> from the commercetools platform API.</p>
+<p>Fetches access token using <a href="https://docs.commercetools.com/api/authorization#tokens-for-anonymous-sessions" target="_blank">Anonymous Session Flow</a> from the commercetools platform API.</p>
 <h4 id="argument">Argument</h4>
 <ol>
 <li><code>anonymousId</code> <em>(Number)</em>: Id parameter which will be associated with generated access token. If not provided, API will autogenerate its own id.</li>
@@ -934,7 +934,7 @@
 <span class="token comment">// }</span>
 </code></pre>
 <h3 id="token-introspection">Token Introspection</h3>
-<p>Fetches info about <code>access_token</code> using <a href="https://docs.commercetools.com/http-api-authorization.html#oauth2-token-introspection" target="_blank">Token Introspection</a> from the commercetools platform API.</p>
+<p>Fetches info about <code>access_token</code> using <a href="https://docs.commercetools.com/api/authorization#introspection" target="_blank">Token Introspection</a> from the commercetools platform API.</p>
 <h4 id="argument">Argument</h4>
 <ol>
 <li><code>token</code> <em>(Number)</em>: access token which should be introspected.</li>
@@ -1062,7 +1062,7 @@ tokenProvider<span class="token punctuation">.</span><span class="token function
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"sdk-auth","level":"1.2.5.1.1","depth":4,"next":{"title":"sdk-client","level":"1.2.5.1.2","depth":4,"path":"sdk/api/sdkClient.md","ref":"sdk/api/sdkClient.md","articles":[]},"previous":{"title":"core","level":"1.2.5.1","depth":3,"anchor":"#core","path":"sdk/api/README.md","ref":"sdk/api/README.md#core","articles":[{"title":"sdk-auth","level":"1.2.5.1.1","depth":4,"path":"sdk/api/sdkAuth.md","ref":"sdk/api/sdkAuth.md","articles":[]},{"title":"sdk-client","level":"1.2.5.1.2","depth":4,"path":"sdk/api/sdkClient.md","ref":"sdk/api/sdkClient.md","articles":[]},{"title":"typescript","level":"1.2.5.1.3","depth":4,"path":"sdk/api/typescriptSdk.md","ref":"sdk/api/typescriptSdk.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs"],"root":"docs","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/commercetools/nodejs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":{"anonymizeIp":true},"token":"UA-38285631-20"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/commercetools/nodejs/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"commercetools node.js","gitbook":">=3.2.1"},"file":{"path":"sdk/api/sdkAuth.md","mtime":"2021-05-25T12:52:00.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-02T21:26:00.666Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"sdk-auth","level":"1.2.5.1.1","depth":4,"next":{"title":"sdk-client","level":"1.2.5.1.2","depth":4,"path":"sdk/api/sdkClient.md","ref":"sdk/api/sdkClient.md","articles":[]},"previous":{"title":"core","level":"1.2.5.1","depth":3,"anchor":"#core","path":"sdk/api/README.md","ref":"sdk/api/README.md#core","articles":[{"title":"sdk-auth","level":"1.2.5.1.1","depth":4,"path":"sdk/api/sdkAuth.md","ref":"sdk/api/sdkAuth.md","articles":[]},{"title":"sdk-client","level":"1.2.5.1.2","depth":4,"path":"sdk/api/sdkClient.md","ref":"sdk/api/sdkClient.md","articles":[]},{"title":"typescript","level":"1.2.5.1.3","depth":4,"path":"sdk/api/typescriptSdk.md","ref":"sdk/api/typescriptSdk.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs","ga"],"root":"docs","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/commercetools/nodejs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":{"anonymizeIp":true},"token":"UA-38285631-20"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/commercetools/nodejs/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"commercetools node.js","gitbook":">=3.2.1"},"file":{"path":"sdk/api/sdkAuth.md","mtime":"2021-04-09T12:07:51.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T09:23:43.884Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1076,11 +1076,19 @@ tokenProvider<span class="token punctuation">.</span><span class="token function
         
     
         
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         

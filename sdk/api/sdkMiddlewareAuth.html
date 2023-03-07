@@ -761,16 +761,14 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 <h2 id="createauthmiddlewareforclientcredentialsflowoptions"><code>createAuthMiddlewareForClientCredentialsFlow(options)</code></h2>
-<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/http-api-authorization.html#client-credentials-flow" target="_blank">Client Credentials Flow</a> of the commercetools platform API.</p>
+<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/api/authorization#client-credentials-flow" target="_blank">Client Credentials Flow</a> of the commercetools platform API.</p>
 <h4 id="named-arguments-options">Named arguments (options)</h4>
 <ol>
 <li><code>host</code> <em>(String)</em>: the host of the OAuth API service</li>
 <li><code>projectKey</code> <em>(String)</em>: the key of the project to assign the default scope to</li>
 <li><code>credentials</code> <em>(Object)</em>: the client credentials for authentication (<code>clientId</code>, <code>clientSecret</code>)</li>
-<li><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/http-api-authorization.html#scopes" target="_blank">scopes</a> (default <code>manage_project:{projectKey}</code>) to assign to the OAuth token</li>
+<li><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/api/scopes" target="_blank">scopes</a> (default <code>manage_project:{projectKey}</code>) to assign to the OAuth token</li>
 <li><code>fetch</code> <em>(Function)</em>: A <code>fetch</code> implementation which can be e.g. <code>node-fetch</code> or <code>unfetch</code> but also the native browser <code>fetch</code> function. Only needs be be passed if not globally available (e.g. through <code>isomorphic-fetch</code>)</li>
-<li><code>timeout</code> <em>(Number)</em>: An optional number value (in milliseconds) which specifies when a request should timeout if authentication request fails to complete.</li>
-<li><code>getAbortController</code> <em>(Function)</em>: An optional abortController class instance that should signal the http-client to abandon the current request instance.</li>
 </ol>
 <h4 id="usage-example">Usage example</h4>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;@commercetools/sdk-client&apos;</span>
@@ -789,14 +787,12 @@
 
       <span class="token comment">// Optional if not globally available</span>
       fetch<span class="token punctuation">,</span>
-      timeout<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token comment">// timeout the request if it doesn&apos;t complete in 10000ms or 10 seconds</span>
-      <span class="token function-variable function">getAbortController</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">AbortController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="createauthmiddlewareforpasswordflowoptions"><code>createAuthMiddlewareForPasswordFlow(options)</code></h2>
-<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/http-api-authorization.html#password-flow" target="_blank">Password Flow</a> of the commercetools platform API.</p>
+<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/api/authorization#password-flow" target="_blank">Password Flow</a> of the commercetools platform API.</p>
 <h4 id="named-arguments-options">Named arguments (options)</h4>
 <ol>
 <li><code>host</code> <em>(String)</em>: the host of the OAuth API service</li>
@@ -805,11 +801,9 @@
 </li>
 <li><p>The <code>user</code> field is an object containing <code>username</code> and <code>password</code>. <a href="#usage-example-1">Sample below</a></p>
 </li>
-<li><p><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/http-api-authorization.html#scopes" target="_blank">scopes</a> to assign to the OAuth token. <em>No default scope is sent</em></p>
+<li><p><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/api/scopes" target="_blank">scopes</a> to assign to the OAuth token. <em>No default scope is sent</em></p>
 </li>
 <li><code>fetch</code> <em>(Function)</em>: A <code>fetch</code> implementation which can be e.g. <code>node-fetch</code> or <code>unfetch</code> but also the native browser <code>fetch</code> function. Only needs be be passed if not globally available (e.g. through <code>isomorphic-fetch</code>)</li>
-<li><code>timeout</code> <em>(Number)</em>: An optional number value (in milliseconds) which specifies when a request should timeout if authentication request fails to complete.</li>
-<li><code>getAbortController</code> <em>(Function)</em>: An optional abortController class instance that should signal the http-client to abandon the current request instance.</li>
 </ol>
 <h4 id="usage-example">Usage example</h4>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;@commercetools/sdk-client&apos;</span>
@@ -832,23 +826,19 @@
 
       <span class="token comment">// Optional if not globally available</span>
       fetch<span class="token punctuation">,</span>
-      timeout<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token comment">// timeout the request if it doesn&apos;t complete in 10000ms or 10 seconds</span>
-      <span class="token function-variable function">getAbortController</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">AbortController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="createauthmiddlewareforanonymoussessionflowoptions"><code>createAuthMiddlewareForAnonymousSessionFlow(options)</code></h2>
-<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/http-api-authorization.html#tokens-for-anonymous-sessions" target="_blank">Anonymous Session Flow</a> of the commercetools platform API.</p>
+<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/api/authorization#tokens-for-anonymous-sessions" target="_blank">Anonymous Session Flow</a> of the commercetools platform API.</p>
 <h4 id="named-arguments-options">Named arguments (options)</h4>
 <ol>
 <li><code>host</code> <em>(String)</em>: the host of the OAuth API service</li>
 <li><code>projectKey</code> <em>(String)</em>: the key of the project to assign the default scope to</li>
 <li><code>credentials</code> <em>(Object)</em>: the client credentials for authentication (<code>clientId</code>, <code>clientSecret</code>, <code>anonymousId</code>)</li>
-<li><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/http-api-authorization.html#scopes" target="_blank">scopes</a> (default <code>manage_project:{projectKey}</code>) to assign to the OAuth token</li>
+<li><code>scopes</code> <em>(Array)</em>: a list of <a href="https://docs.commercetools.com/api/scopes" target="_blank">scopes</a> (default <code>manage_project:{projectKey}</code>) to assign to the OAuth token</li>
 <li><code>fetch</code> <em>(Function)</em>: A <code>fetch</code> implementation which can be e.g. <code>node-fetch</code> or <code>unfetch</code> but also the native browser <code>fetch</code> function. Only needs be be passed if not globally available (e.g. through <code>isomorphic-fetch</code>)</li>
-<li><code>timeout</code> <em>(Number)</em>: An optional number value (in milliseconds) which specifies when a request should timeout if authentication request fails to complete.</li>
-<li><code>getAbortController</code> <em>(Function)</em>: An optional abortController class instance that should signal the http-client to abandon the current request instance.</li>
 </ol>
 <h4 id="usage-example">Usage example</h4>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;@commercetools/sdk-client&apos;</span>
@@ -868,14 +858,12 @@
 
       <span class="token comment">// Optional if not globally available</span>
       fetch<span class="token punctuation">,</span>
-      timeout<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token comment">// timeout the request if it doesn&apos;t complete in 10000ms or 10 seconds</span>
-      <span class="token function-variable function">getAbortController</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">AbortController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="createauthmiddlewareforrefreshtokenflowoptions"><code>createAuthMiddlewareForRefreshTokenFlow(options)</code></h2>
-<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/http-api-authorization.html#refresh-token-flow" target="_blank">Refresh Token Flow</a> of the commercetools platform API.</p>
+<p>Creates a <a href="../Glossary.html#middleware">middleware</a> to handle authentication for the <a href="https://docs.commercetools.com/api/authorization#refresh-token-flow" target="_blank">Refresh Token Flow</a> of the commercetools platform API.</p>
 <h4 id="named-arguments-options">Named arguments (options)</h4>
 <ol>
 <li><code>host</code> <em>(String)</em>: the host of the OAuth API service</li>
@@ -883,8 +871,6 @@
 <li><code>credentials</code> <em>(Object)</em>: the client credentials for authentication (<code>clientId</code>, <code>clientSecret</code>)</li>
 <li><code>refreshToken</code> <em>(String)</em>: refreshToken from the API to use to fetch new token.</li>
 <li><code>fetch</code> <em>(Function)</em>: A <code>fetch</code> implementation which can be e.g. <code>node-fetch</code> or <code>unfetch</code> but also the native browser <code>fetch</code> function. Only needs be be passed if not globally available (e.g. through <code>isomorphic-fetch</code>)</li>
-<li><code>timeout</code> <em>(Number)</em>: An optional number value (in milliseconds) which specifies when a request should timeout if authentication request fails to complete.</li>
-<li><code>getAbortController</code> <em>(Function)</em>: An optional abortController class instance that should signal the http-client to abandon the current request instance.</li>
 </ol>
 <h4 id="usage-example">Usage example</h4>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;@commercetools/sdk-client&apos;</span>
@@ -903,8 +889,6 @@
 
       <span class="token comment">// Optional if not globally available</span>
       fetch<span class="token punctuation">,</span>
-      timeout<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token comment">// timeout the request if it doesn&apos;t complete in 10000ms or 10 seconds</span>
-      <span class="token function-variable function">getAbortController</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">AbortController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -916,10 +900,7 @@
 <p><code>options</code> is an optional <em>(Object)</em>, having the following properties:</p>
 <ol>
 <li><code>force</code> <em>(Boolean)</em>: if set to true, existing Authorization header (if any) in the request will be overridden with the supplied access token (Default: <code>true</code>)</li>
-<li><code>timeout</code> <em>(Number)</em>: An optional number value (in milliseconds) which specifies when a request should timeout if authentication request fails to complete.</li>
-<li><code>getAbortController</code> <em>(Function)</em>: An optional abortController class instance that should signal the http-client to abandon the current request instance.</li>
 </ol>
-<p><strong>Note</strong>: if timeout is specified, then it&apos;s mandatory to also specify the getAbortController property.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;@commercetools/sdk-client&apos;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> createAuthMiddlewareWithExistingToken <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;@commercetools/sdk-middleware-auth&apos;</span>
 
@@ -929,8 +910,6 @@
   middlewares<span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token function">createAuthMiddlewareWithExistingToken</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accessToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
       force<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      timeout<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token comment">// timeout the request if it doesn&apos;t complete in 10000ms or 10 seconds</span>
-      <span class="token function-variable function">getAbortController</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token class-name">AbortController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -978,7 +957,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"sdk-middleware-auth","level":"1.2.5.2.1","depth":4,"next":{"title":"sdk-middleware-http","level":"1.2.5.2.2","depth":4,"path":"sdk/api/sdkMiddlewareHttp.md","ref":"sdk/api/sdkMiddlewareHttp.md","articles":[]},"previous":{"title":"middlewares","level":"1.2.5.2","depth":3,"anchor":"#middlewares","path":"sdk/api/README.md","ref":"sdk/api/README.md#middlewares","articles":[{"title":"sdk-middleware-auth","level":"1.2.5.2.1","depth":4,"path":"sdk/api/sdkMiddlewareAuth.md","ref":"sdk/api/sdkMiddlewareAuth.md","articles":[]},{"title":"sdk-middleware-http","level":"1.2.5.2.2","depth":4,"path":"sdk/api/sdkMiddlewareHttp.md","ref":"sdk/api/sdkMiddlewareHttp.md","articles":[]},{"title":"sdk-middleware-queue","level":"1.2.5.2.3","depth":4,"path":"sdk/api/sdkMiddlewareQueue.md","ref":"sdk/api/sdkMiddlewareQueue.md","articles":[]},{"title":"sdk-middleware-logger","level":"1.2.5.2.4","depth":4,"path":"sdk/api/sdkMiddlewareLogger.md","ref":"sdk/api/sdkMiddlewareLogger.md","articles":[]},{"title":"sdk-middleware-correlation-id","level":"1.2.5.2.5","depth":4,"path":"sdk/api/sdkMiddlewareCorrelationId.md","ref":"sdk/api/sdkMiddlewareCorrelationId.md","articles":[]},{"title":"sdk-middleware-user-agent","level":"1.2.5.2.6","depth":4,"path":"sdk/api/sdkMiddlewareUserAgent.md","ref":"sdk/api/sdkMiddlewareUserAgent.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","anchorjs"],"root":"docs","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/commercetools/nodejs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":{"anonymizeIp":true},"token":"UA-38285631-20"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/commercetools/nodejs/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"commercetools node.js","gitbook":">=3.2.1"},"file":{"path":"sdk/api/sdkMiddlewareAuth.md","mtime":"2021-11-17T11:48:33.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-02T21:26:00.666Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"sdk-middleware-auth","level":"1.2.5.2.1","depth":4,"next":{"title":"sdk-middleware-http","level":"1.2.5.2.2","depth":4,"path":"sdk/api/sdkMiddlewareHttp.md","ref":"sdk/api/sdkMiddlewareHttp.md","articles":[]},"previous":{"title":"middlewares","level":"1.2.5.2","depth":3,"anchor":"#middlewares","path":"sdk/api/README.md","ref":"sdk/api/README.md#middlewares","articles":[{"title":"sdk-middleware-auth","level":"1.2.5.2.1","depth":4,"path":"sdk/api/sdkMiddlewareAuth.md","ref":"sdk/api/sdkMiddlewareAuth.md","articles":[]},{"title":"sdk-middleware-http","level":"1.2.5.2.2","depth":4,"path":"sdk/api/sdkMiddlewareHttp.md","ref":"sdk/api/sdkMiddlewareHttp.md","articles":[]},{"title":"sdk-middleware-queue","level":"1.2.5.2.3","depth":4,"path":"sdk/api/sdkMiddlewareQueue.md","ref":"sdk/api/sdkMiddlewareQueue.md","articles":[]},{"title":"sdk-middleware-logger","level":"1.2.5.2.4","depth":4,"path":"sdk/api/sdkMiddlewareLogger.md","ref":"sdk/api/sdkMiddlewareLogger.md","articles":[]},{"title":"sdk-middleware-correlation-id","level":"1.2.5.2.5","depth":4,"path":"sdk/api/sdkMiddlewareCorrelationId.md","ref":"sdk/api/sdkMiddlewareCorrelationId.md","articles":[]},{"title":"sdk-middleware-user-agent","level":"1.2.5.2.6","depth":4,"path":"sdk/api/sdkMiddlewareUserAgent.md","ref":"sdk/api/sdkMiddlewareUserAgent.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs","ga"],"root":"docs","styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/commercetools/nodejs/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"ga":{"configuration":{"anonymizeIp":true},"token":"UA-38285631-20"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/commercetools/nodejs/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"commercetools node.js","gitbook":">=3.2.1"},"file":{"path":"sdk/api/sdkMiddlewareAuth.md","mtime":"2021-04-09T12:07:51.298Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T09:23:43.884Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -992,11 +971,19 @@
         
     
         
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
