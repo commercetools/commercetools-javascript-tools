@@ -1,3 +1,14 @@
+<hr />
+
+<div style="background-color: yellow; color: black; padding: 10px; text-align: center; font-weight: bold;">
+  <h2>🚨 Unmaintained fork of <i>commercetools/nodejs</i> 🚨</h2>
+  <p>
+    This is an unmaintained fork of the <a href="https://github.com/commercetools/nodejs">commercetools/nodejs</a> repository. This repository does not undergo active development or maintenance. Any effort should be taken on the nodejs repository.
+  </p>
+</div>
+
+<hr />
+
 <p align="center">
   <a href="https://commercetools.com/">
     <img alt="commercetools logo" src="http://cdn.rawgit.com/commercetools/press-kit/master/PNG/72DPI/CT%20logo%20chrom%20black%20horizontal%20RGB%2072dpi.png">
